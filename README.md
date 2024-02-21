@@ -12,7 +12,9 @@
 
 The base logic of the problem that the probabilites of getting the sum (or frequencies of the sum values between two new arrays) between the two new dice should be the same as the probabilites for the regular six-faced dice. This is achieved using the generate_arrays() function which takes the frequency of sums between our old dice, maximum value that is allowed for array A (max_value_A) and the number of sides of dice (array_length).
 
-The function initiates two arrays for checking the condition for the new_dice array_A and array_B. Now using the conditon while len(array_A) < array_length, we append random value to the array_A in each iteration using random_value = random.randint(1, max_value_A) within the maximum permissible value max_value_A.
+The function initiates two arrays for checking the condition for the new_dice array_A and array_B. Since any die (Die A and Die B in this case) will contain only 6 faces and not beyond that, we run a for loop 6 times for inserting random values in the arrays representing the two dice, dice A and dice B.
+
+Now using the condition while len(array_A) < array_length, we append random value to the array_A in each iteration using random_value = random.randint(1, max_value_A) within the maximum permissible value max_value_A.
 
 For array B also, we follow same method but random value is defined as random_value = random.randint(1, 12-max_value_A) (or 12 – max(array_A)), since the maximum sum possible between two dice is 12. We also check if a value is not present in array_B to make sure that repetition does not occur.
 
